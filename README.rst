@@ -23,6 +23,7 @@ Installation
 
 The following prerequisites must be installed on your system to install
 and use this library:
+
 * Python 3.6 or later
 * The Python `setuptools <https://pypi.org/project/setuptools/>` package
   (usually available as a system package under the name ``python3-setuptools``)
