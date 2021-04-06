@@ -56,7 +56,7 @@ setup(
         "Topic :: Security",
         "Topic :: System :: Monitoring"
     ],
-    install_requires=["setuptools"],
+    install_requires=["setuptools", "jsonschema"],
     packages=find_packages("."),
     cmdclass={'build': build, 'develop': develop},
     zip_safe=False,

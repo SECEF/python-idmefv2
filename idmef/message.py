@@ -52,7 +52,7 @@ class Message(dict):
         # The messages are empty right after initialization.
         pass
 
-    def validate(self) -> bool:
+    def validate(self) -> None:
         schema_file = self._VERSIONS.get(self.get('Version'), self._VERSIONS[None])
         schema = json.load(resource_stream('idmef.schemas', schema_file))
         jsonschema.validate(self, schema)
