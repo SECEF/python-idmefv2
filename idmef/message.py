@@ -54,8 +54,11 @@ class Message(dict):
 
     def validate(self) -> None:
         schema_file = self._VERSIONS.get(self.get('Version'), self._VERSIONS[None])
-        schema = json.load(resource_stream('idmef.schemas', schema_file))
-        jsonschema.validate(self, schema)
+        stream = resource_stream('idmef.schemas', schema_file)
+        try:
+            jsonschema.validate(self, json.load(stream))
+        finally:
+            stream.close()
 
     def serialize(self, content_type: str) -> SerializedMessage:
         serializer = get_serializer(content_type)
