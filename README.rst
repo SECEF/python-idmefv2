@@ -1,41 +1,46 @@
-IDMEFv2 Modelization library
-############################
+python-idmefv2
+##############
 
-This repository contains a Python library that provides modelization features
-for the Intrusion Detection Message Exchange Format version 2 (IDMEFv2).
-It is part of the `SECEF <https://www.secef.net/>` project.
+A Python library for parsing, handling, and generating JSON IDMEFv2 messages.
 
-It can be used to represent IDMEFv2 messages in memory, validate them and
-serialize/unserialize them for exchange with other systems.
+It can be used to represent Incident Detection Message Exchange Format (IDMEFv2)
+messages in memory, validate them and serialize/unserialize them for exchange
+with other systems.
 
 This code is currently in an experimental status and is regularly kept in sync
-with the development status of the IDMEFv2 format, as part of the SECEF project.
+with the development status of the IDMEFv2 format, as part of the
+`SECurity Exchange Format project <https://www.secef.net/>`_.
+
+The latest revision of the IDMEFv2 format specification can be found in the
+`idmefv2-definition repository <https://github.com/SECEF/idmefv2-definition>`_.
+
+IDMEFv2 messages can be transported using the
+`python-idmefv2-transport <https://github.com/SECEF/python-idmefv2-transport>`_
+Python library.
 
 You can find more information about the previous version (v1) of the
-Intrusion Detection Message Exchange Format
-in `RFC 4765 <https://tools.ietf.org/html/rfc4765>`.
+Intrusion Detection Message Exchange Format in
+`RFC 4765 <https://tools.ietf.org/html/rfc4765>`_.
 
-Visit https://www.secef.net/ for more information about IDMEFv2's status
-and development progress.
 
 Installation
 ============
 
 The following prerequisites must be installed on your system to install
-and use this library:
+this library:
 
 * Python 3.6 or later
-* The Python `setuptools <https://pypi.org/project/setuptools/>` package
+* GCC (any version should do)
+* The Python `setuptools <https://pypi.org/project/setuptools/>`_ package
   (usually available as a system package under the name ``python3-setuptools``)
-* The Python `jsonschema <https://pypi.org/project/jsonschema/>` package
+* The Python `jsonschema <https://pypi.org/project/jsonschema/>`_ package
   (usually available as a system package under the name ``python3-jsonschema``)
 
 To install the library, simply run:
 
 ..  sourcecode:: sh
 
-    # Replace "python3" with the full path to the Python 3 interpreter
-    # if necessary.
+    # Replace "python3" with the full path to the Python 3 interpreter if necessary.
     sudo python3 install setup.py
 
 Usage
@@ -88,7 +93,7 @@ Message validation
 ------------------
 
 You can validate an IDMEFv2 message using its ``validate()`` method.
-A `validation error <https://python-jsonschema.readthedocs.io/en/stable/errors/>`
+A `validation error <https://python-jsonschema.readthedocs.io/en/stable/errors/>`_
 is raised if the message is invalid.
 
 E.g.
@@ -150,6 +155,7 @@ Contributions
 All contributions must be licensed under the BSD 2-clause license.
 See the LICENSE file inside this repository for more information.
 
-To improve coordination between the various contributors, we kindly ask
-that new contributors subscribe to the `SECEF mailing list
-<https://www.freelists.org/list/secef>` as a way to introduce themselves.
+To improve coordination between the various contributors,
+we kindly ask that new contributors subscribe to the
+`SECEF mailing list <https://www.freelists.org/list/secef>`_
+as a way to introduce themselves.
