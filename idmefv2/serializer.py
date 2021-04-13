@@ -53,7 +53,7 @@ def get_serializer(content_type: str) -> 'Serializer':
 
     if _serializers is None:
         _serializers = {}
-        for entry_point in pkg_resources.iter_entry_points('idmef.serializer'):
+        for entry_point in pkg_resources.iter_entry_points('idmefv2.serializer'):
             try:
                 cls = entry_point.load()
                 if issubclass(cls, Serializer):

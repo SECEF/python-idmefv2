@@ -54,7 +54,7 @@ class Message(dict):
 
     def validate(self) -> None:
         schema_file = self._VERSIONS.get(self.get('Version'), self._VERSIONS[None])
-        stream = resource_stream('idmef.schemas', schema_file)
+        stream = resource_stream('idmefv2.schemas', schema_file)
         try:
             jsonschema.validate(self, json.load(stream))
         finally:

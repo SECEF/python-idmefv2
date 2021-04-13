@@ -44,13 +44,13 @@ Usage
 Message modelization
 --------------------
 
-A new message can be created by instantiating the ``idmef.Message`` class.
+A new message can be created by instantiating the ``idmefv2.Message`` class.
 This object can then be used like a regular Python dictionary:
 
 ..  sourcecode:: python
 
     # Import the Message class
-    from idmef import Message
+    from idmefv2 import Message
 
     # Import other modules if necessary
     import uuid
@@ -132,7 +132,7 @@ E.g.
 
 ..  sourcecode:: python
 
-    from idmef import Message, SerializedMessage
+    from idmefv2 import Message, SerializedMessage
 
     # Instantiate a SerializedMessage based on the received data.
     # The first argument specifies the MIME content type for the data.

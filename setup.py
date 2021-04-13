@@ -36,7 +36,7 @@ class develop(orig_develop):
 
 
 setup(
-    name="idmef",
+    name="idmefv2",
     version=VERSION,
     maintainer="Prelude Team",
     maintainer_email="contact.secef@csgroup.eu",
@@ -61,9 +61,9 @@ setup(
     cmdclass={'build': build, 'develop': develop},
     zip_safe=False,
     entry_points={
-        'idmef.serializer': [
-            'application/json = idmef.serializers.json:JSONSerializer',
-            'text/json = idmef.serializers.json:JSONSerializer',
+        'idmefv2.serializer': [
+            'application/json = idmefv2.serializers.json:JSONSerializer',
+            'text/json = idmefv2.serializers.json:JSONSerializer',
         ],
     },
 )
