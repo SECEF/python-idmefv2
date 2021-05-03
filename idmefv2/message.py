@@ -44,8 +44,8 @@ class SerializedMessage(object):
 
 class Message(dict):
     _VERSIONS = {
-        None: 'IDMEFv2_0.1.schema',
-        '0.1': 'IDMEFv2_0.1.schema',
+        None: 'IDMEFv2.schema',
+        '2.0.3': 'IDMEFv2.schema',
     }
 
     def __init__(self):

@@ -26,15 +26,22 @@ Intrusion Detection Message Exchange Format in
 Installation
 ============
 
-The following prerequisites must be installed on your system to install
+The following prerequisites must be installed on your system to install and use
 this library:
 
 * Python 3.6 or later
-* GCC (any version should do)
 * The Python `setuptools <https://pypi.org/project/setuptools/>`_ package
   (usually available as a system package under the name ``python3-setuptools``)
 * The Python `jsonschema <https://pypi.org/project/jsonschema/>`_ package
   (usually available as a system package under the name ``python3-jsonschema``)
+
+This repository uses Git submodules to include a copy of the IDMEFv2 JSON schema.
+When installing from sources using a Git clone, make sure you also initialize
+the submodules:
+
+..  sourcecode:: sh
+
+    git submodule init
 
 To install the library, simply run:
 

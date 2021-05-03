@@ -2,10 +2,8 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 import glob
-import io
 import os
-import subprocess
-import sys
+import shutil
 
 from setuptools import setup, find_packages
 from distutils.command.build import build as orig_build
@@ -14,24 +12,21 @@ from setuptools.command.develop import develop as orig_develop
 VERSION = "0.0.0"
 
 
-def compile_schemas(basedir):
+def copy_schemas(basedir):
     schemasdir = os.path.join(basedir, 'schemas')
-    for f in glob.glob('data/*.schema.in'):
-        fname = os.path.basename(f[:-3])
-        with io.open(f, 'rb') as schema:
-            subprocess.check_output(["gcc", "-P", "-E", "-", "-o", os.path.join(schemasdir, fname)],
-                                    input=schema.read())
+    for f in glob.glob('data/*.schema'):
+        shutil.copy2(f, schemasdir)
 
 class build(orig_build):
     def run(self):
         res = orig_build.run(self)
-        compile_schemas(os.path.join(self.build_purelib, self.distribution.metadata.get_name()))
+        copy_schemas(os.path.join(self.build_purelib, self.distribution.metadata.get_name()))
         return res
 
 class develop(orig_develop):
     def run(self):
         res = orig_develop.run(self)
-        compile_schemas(os.path.join('.', self.distribution.metadata.get_name()))
+        copy_schemas(os.path.join('.', self.distribution.metadata.get_name()))
         return res
 
 
